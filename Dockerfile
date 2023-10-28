@@ -1,7 +1,7 @@
-FROM node:16
-WORKDIR /home/vboxuser/calculator
+FROM node:14
+WORKDIR /app
 COPY package*.json ./
-COPY . .
 RUN npm install
-EXPOSE 8000
+COPY . .
+EXPOSE 3000
 CMD ["node", "index.js"]
