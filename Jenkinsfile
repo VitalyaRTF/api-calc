@@ -15,6 +15,7 @@ pipeline {
                 echo 'Building...'
                 sh 'npm install'
                 sh 'npm install hapi'
+                sh 'npm install @hapi/hapi'
             }
         }
         stage('Test') {
