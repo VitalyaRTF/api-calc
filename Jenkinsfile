@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                 sh 'mkdir -p reports'
-                def trivyResult = sh(script: 'trivy image —ignore-unfixed —exit-code 1 —format template —template "@contrib/html.tpl" -o reports/calc-scan.html ${DOCKER_IMAGE}', returnStatus: true)
+                def trivyResult = sh(script: 'trivy image —ignore-unfixed —exit-code 1 —format template —template "@contrib/html.tpl" -o reports/calc-scan.html node', returnStatus: true)
                 publishHTML target : [
                 allowMissing: true,
                 alwaysLinkToLastBuild: true,
