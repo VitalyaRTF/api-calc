@@ -14,6 +14,7 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh 'npm install'
+                sh 'npm install hapi'
             }
         }
         stage('Test') {
