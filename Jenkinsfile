@@ -19,7 +19,7 @@ pipeline {
     stage('Scanning') {
             steps {
                 script {
-                sh 'trivi image node'
+                sh 'trivy image node'
                 }
                 }
                 }
