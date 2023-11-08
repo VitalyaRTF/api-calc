@@ -16,10 +16,10 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') {
+        stage('Docker') {
             steps {
-                echo 'Testing...'
-                sh 'npm test'
+                echo 'Create Docker...'
+                sh 'docker run -p 3000:3000 calculator'
             }
         }
     }
