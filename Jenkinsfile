@@ -13,15 +13,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'npm install'
+                sh 'docker build -t vitalyartf/api-calc:latest .'
             }
         }
-    stage('Scanning') {
-            steps {
-                script {
-                sh 'trivy image node'
-                }
-                }
-                }
     }
 }
