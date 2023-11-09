@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'docker build -t vitalyartf/api-calc:latest .'
+                sh 'docker build -t -p 3000:3000 calc  .'
             }
         }
     }

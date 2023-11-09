@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/VitalyaRTF/api-calc#readme",
   "dependencies": {
+    "@hapi/hapi": "^21.3.2",
     "hapi": "^18.1.0"
   },
   "devDependencies": {
