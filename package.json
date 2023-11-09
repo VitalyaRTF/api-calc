@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./index.js",
-    "start": "node /home/vboxuser/calculator2/api-calc/index.js"
+    "test": "curl localhost:3000/add/1/1",
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
