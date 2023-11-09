@@ -13,11 +13,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'npm install'
+                sh 'docker build -t calc .'
 		sh 'npm install -g pm2'
             }
         }
-        stage('Test') {
+        stage('docker start') {
+            steps {
+                echo 'Starting...'
+                sh 'docker run -d -p 3000:3000 calc'
+            }
+        }
+    	   stage('Test') {
             steps {
                 echo 'Testing...'
 		sh 'pm2 start index.js'
