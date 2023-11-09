@@ -19,8 +19,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-		sh 'npm start'
+		sh 'pm2 start index.js'
                 sh 'npm test'
+		sh 'pm2 stop index.js'
             }
         }
     }
