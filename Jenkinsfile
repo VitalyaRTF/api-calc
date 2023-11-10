@@ -4,7 +4,7 @@ pipeline {
 
     agent {
         docker {
-            image 'VitalyaRTF/api-calc'
+            image 'calc'
             args '-u root'
         }
     }
@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'docker build -t VitalyaRTF/api-calc:latest .'
+                sh 'docker build -t calc:latest .'
 		sh 'npm install -g pm2'
             }
         }
