@@ -12,8 +12,8 @@ pipeline {
 	stage('Deploy Container') {
             steps {
                 script {
-                // Запуск контейнера
-                sh "docker run -d -p 3000:3000 --name calculator calc"
+                sh 'docker stop calculator || true'
+                sh 'docker run -d -p 3000:3000 --name calculator calc'
                 }
             }
         }
