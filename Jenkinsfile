@@ -33,7 +33,7 @@ pipeline {
         }
    	stage('Semgrep-Scan') {
 	   	steps {
-		sh 'pip3 install semgrep'
+		sh 'pip install semgrep'
               	sh 'semgrep scan index.js'
               	}
         }
