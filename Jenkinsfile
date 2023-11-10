@@ -13,14 +13,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'docker build -t calc:latest .'
 		sh 'npm install -g pm2'
             }
         }
         stage('docker start') {
             steps {
                 echo 'Starting...'
-                sh 'docker run -d -p 3000:3000 calc'
             }
         }
 	   stage('Test') {
