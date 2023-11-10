@@ -4,7 +4,7 @@ pipeline {
 
     agent {
         docker {
-            image 'calc'
+            image 'node:latest'
             args '-u root'
         }
     }
@@ -13,14 +13,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'docker build -t calc .'
 		sh 'npm install -g pm2'
             }
         }
         stage('docker start') {
             steps {
                 echo 'Starting...'
-                sh 'docker run -d -p 3000:3000 calc'
+                sh 'node --version'
             }
         }
     	   stage('Test') {
