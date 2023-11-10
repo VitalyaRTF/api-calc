@@ -4,7 +4,6 @@ pipeline {
 
     agent {
         docker {
-            image 'calc'
             args '-u root'
         }
     }
@@ -13,6 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
+		dir ('.') {sh 'docker build . '}
 		sh 'npm install -g pm2'
             }
         }
