@@ -9,7 +9,7 @@ pipeline {
                     }
                 }
             }
- stage('Scanning') {
+ 	stage('Scanning') {
             steps {
                 script {
                 sh 'mkdir -p reports'
@@ -30,6 +30,12 @@ pipeline {
                     }
                 }
             }
+        }
+   	stage('Semgrep-Scan') {
+	   	steps {
+              	sh 'pip3 install semgrep'
+              	sh 'semgrep scan index.js'
+              	}
         }
 	stage('Deploy Container') {
             steps {
