@@ -20,6 +20,7 @@ pipeline {
 	stage('Test Calculator') {
             steps {
 		sh 'curl localhost:3000/add/1/1'}
+		}
 	}
 }
 	
