@@ -4,7 +4,7 @@ pipeline {
 
     agent {
         docker {
-            image 'node:latest'
+            image 'calc'
             args '-u root'
         }
     }
@@ -19,7 +19,7 @@ pipeline {
         stage('docker start') {
             steps {
                 echo 'Starting...'
-                sh 'node --version'
+                sh 'docker run -d -p 3000:3000 calc'
             }
         }
     	   stage('Test') {
