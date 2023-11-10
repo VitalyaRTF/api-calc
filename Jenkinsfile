@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
+		sh 'docker build -t calc .'
             }
         }
         stage('docker start') {
