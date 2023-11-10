@@ -1,31 +1,17 @@
-#!/usr/bin/env groovy
-
 pipeline {
+    agent any
 
-    agent {
-        docker {
-            image 'calc'
-            args '-u root'
-        }
-    }
+    environment {
+        DOCKER_IMAGE = 'calc'
+  }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
-		sh 'docker build -t calc .'
+                script {
+                sh 'docker build -t calc .'
+                    }
+                }
             }
-        }
-        stage('docker start') {
-            steps {
-                echo 'Starting...'
-            }
-        }
-	   stage('Test') {
-            steps {
-                echo 'Testing...'
-                sh 'npm test'
-            }
-        }
-    }
+	}
 }
