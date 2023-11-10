@@ -33,9 +33,6 @@ pipeline {
         }
    	stage('Semgrep-Scan') {
 	   	steps {
-		sh 'python3 -m venv myenv'
-		sh 'source myenv/bin/activate'
-		sh 'pip3 install semgrep'
               	sh 'semgrep scan index.js'
               	}
         }
